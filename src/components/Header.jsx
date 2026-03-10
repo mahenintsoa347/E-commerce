@@ -8,11 +8,31 @@ export default function Header({ onToggleCart }) {
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, texts } = useLanguage();
   const { cartCount } = useCart();
+  const isLightTheme = theme === "light";
 
   return (
     <header className="header-card">
       <nav className="top-nav">
         <div className="nav-brand">
+          <div className="store-logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" className="store-logo-icon">
+              <path
+                d="M4 8.5 6 5h12l2 3.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M9 10a3 3 0 0 0 6 0"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
           <span className="brand-badge">{texts.appBadge}</span>
           <div className="nav-brand-copy">
             <strong>Context Store</strong>
@@ -35,12 +55,30 @@ export default function Header({ onToggleCart }) {
 
           <button
             type="button"
-            className="nav-pill nav-icon-btn"
+            className="theme-toggle-btn"
             onClick={toggleTheme}
             aria-label={texts.theme}
+            title={isLightTheme ? texts.themeDark : texts.themeLight}
           >
-            <span className="panel-kicker">{texts.theme}</span>
-            <strong>{theme === "light" ? texts.themeLight : texts.themeDark}</strong>
+            {isLightTheme ? (
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="theme-icon">
+                <circle cx="12" cy="12" r="4" fill="currentColor" />
+                <path
+                  d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.5 1.5M6.8 17.2l-1.5 1.5M18.7 18.7l-1.5-1.5M6.8 6.8 5.3 5.3"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="theme-icon">
+                <path
+                  d="M19 14.8A7.8 7.8 0 0 1 9.2 5a8.5 8.5 0 1 0 9.8 9.8Z"
+                  fill="currentColor"
+                />
+              </svg>
+            )}
           </button>
 
           <div className="nav-pill lang-pill">

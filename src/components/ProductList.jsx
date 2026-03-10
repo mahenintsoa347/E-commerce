@@ -11,6 +11,8 @@ const products = [
     },
     price: 180000,
     category: { fr: "Audio", en: "Audio" },
+    image:
+      "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
   },
   {
     id: 2,
@@ -21,6 +23,8 @@ const products = [
     },
     price: 260000,
     category: { fr: "Accessoires", en: "Accessories" },
+    image:
+      "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
   },
   {
     id: 3,
@@ -31,6 +35,8 @@ const products = [
     },
     price: 145000,
     category: { fr: "Lifestyle", en: "Lifestyle" },
+    image:
+      "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
   },
   {
     id: 4,
@@ -41,6 +47,8 @@ const products = [
     },
     price: 98000,
     category: { fr: "Maison", en: "Home" },
+    image:
+      "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
   },
 ];
 
@@ -69,6 +77,14 @@ export default function ProductList() {
       <div className="product-grid">
         {products.map((product) => (
           <article key={product.id} className="product-card">
+            <div className="product-media">
+              <img
+                className="product-image"
+                src={product.image}
+                alt={product.name[language]}
+                loading="lazy"
+              />
+            </div>
             <div className="product-head">
               <span className="category-pill">{product.category[language]}</span>
               <span className="product-index">0{product.id}</span>

@@ -26,6 +26,8 @@ const translations = {
     addToCart: "Ajouter au panier",
     cartTitle: "Produits dans le panier",
     cartEmpty: "Votre panier est vide pour le moment.",
+    openCart: "Ouvrir le panier",
+    closeCart: "Fermer le panier",
     remove: "Supprimer",
     total: "Total",
     statusReady: "Pret pour les demonstrations Context API",
@@ -55,6 +57,8 @@ const translations = {
     addToCart: "Add to cart",
     cartTitle: "Products in cart",
     cartEmpty: "Your cart is empty for now.",
+    openCart: "Open cart",
+    closeCart: "Close cart",
     remove: "Remove",
     total: "Total",
     statusReady: "Ready for Context API demos",
@@ -96,4 +100,3 @@ export function useLanguage() {
 
   return context;
 }
-

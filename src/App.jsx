@@ -13,6 +13,14 @@ export default function App() {
   }, [theme]);
 
   useEffect(() => {
+    document.body.style.overflow = isCartOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isCartOpen]);
+
+  useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         setIsCartOpen(false);

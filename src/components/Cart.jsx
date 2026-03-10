@@ -39,7 +39,7 @@ export default function Cart({ isOpen, onClose }) {
             onClick={onClose}
             aria-label={texts.closeCart}
           >
-            ×
+            X
           </button>
         </div>
 

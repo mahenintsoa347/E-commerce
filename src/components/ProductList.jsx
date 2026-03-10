@@ -9,7 +9,7 @@ const products = [
       fr: "Son immersif et reduction de bruit pour travailler partout.",
       en: "Immersive sound and noise cancellation for focused work anywhere.",
     },
-    price: 89.99,
+    price: 180000,
     category: { fr: "Audio", en: "Audio" },
   },
   {
@@ -19,7 +19,7 @@ const products = [
       fr: "Suivi d'activite, notifications et autonomie longue duree.",
       en: "Activity tracking, notifications and long battery life.",
     },
-    price: 129.0,
+    price: 260000,
     category: { fr: "Accessoires", en: "Accessories" },
   },
   {
@@ -29,7 +29,7 @@ const products = [
       fr: "Compartiments pratiques pour ordinateur, chargeur et carnets.",
       en: "Smart compartments for laptop, charger and notebooks.",
     },
-    price: 74.5,
+    price: 145000,
     category: { fr: "Lifestyle", en: "Lifestyle" },
   },
   {
@@ -39,7 +39,7 @@ const products = [
       fr: "Eclairage reglable pour bureau, lecture ou streaming.",
       en: "Adjustable lighting for desk work, reading or streaming.",
     },
-    price: 54.25,
+    price: 98000,
     category: { fr: "Maison", en: "Home" },
   },
 ];
@@ -48,10 +48,11 @@ export default function ProductList() {
   const { addToCart } = useCart();
   const { language, texts } = useLanguage();
   const priceFormatter = new Intl.NumberFormat(
-    language === "fr" ? "fr-FR" : "en-US",
+    language === "fr" ? "fr-MG" : "en-US",
     {
       style: "currency",
-      currency: "EUR",
+      currency: "MGA",
+      maximumFractionDigits: 0,
     }
   );
 

@@ -5,10 +5,11 @@ export default function Cart({ isOpen, onClose }) {
   const { cartItems, removeFromCart, cartTotal } = useCart();
   const { language, texts } = useLanguage();
   const priceFormatter = new Intl.NumberFormat(
-    language === "fr" ? "fr-FR" : "en-US",
+    language === "fr" ? "fr-MG" : "en-US",
     {
       style: "currency",
-      currency: "EUR",
+      currency: "MGA",
+      maximumFractionDigits: 0,
     }
   );
 
